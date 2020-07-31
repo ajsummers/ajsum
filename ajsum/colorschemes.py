@@ -45,15 +45,26 @@ schemes = {
     'misc32': ['#86E3CE', '#D0E6A5', '#FFDD94', '#FA897B', '#CCABD8'],
 }
 
+formatting = {
+    'standard': ['serif', 'Ubuntu', 'Ubuntu Mono', 10, 10, 'bold', 10, 8, 8, 10, 12],
+}
 
-def formatter(scheme, facecolor='#E6E6E6', linewidth=2):
+
+def formatter(scheme, form='standard'):
 
     cycle = cycler('color', schemes[scheme])
-    plt.rc('axes', facecolor=facecolor, edgecolor='none', axisbelow=True,
+    plt.rc('axes', facecolor='#E6E6E6', edgecolor='none', axisbelow=True,
            grid=True, prop_cycle=cycle)
-    plt.rc('grid', color='w', linestyle='solid')
-    plt.rc('xtick', direction='out', color='gray')
-    plt.rc('ytick', direction='out', color='gray')
-    plt.rc('patch', edgecolor='#E6E6E6')
-    plt.rc('lines', linewidth=linewidth)
+
+    plt.rcParams['font.family'] = formatting[form][0]
+    plt.rcParams['font.serif'] = formatting[form][1]
+    plt.rcParams['font.monospace'] = formatting[form][2]
+    plt.rcParams['font.size'] = formatting[form][3]
+    plt.rcParams['axes.labelsize'] = formatting[form][4]
+    plt.rcParams['axes.labelweight'] = formatting[form][5]
+    plt.rcParams['axes.titlesize'] = formatting[form][6]
+    plt.rcParams['xtick.labelsize'] = formatting[form][7]
+    plt.rcParams['ytick.labelsize'] = formatting[form][8]
+    plt.rcParams['legend.fontsize'] = formatting[form][9]
+    plt.rcParams['figure.titlesize'] = formatting[form][10]
 

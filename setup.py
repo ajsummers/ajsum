@@ -6,7 +6,7 @@ with open('README.md', 'r') as rdm:
 
 setuptools.setup(
     name='ajsum',
-    version='0.0.2',
+    version='0.0.3',
     author='Alex Summers',
     author_email='ajsummers7@gmail.com',
     description='A small package for convenient functions',
